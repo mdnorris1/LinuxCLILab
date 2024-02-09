@@ -95,11 +95,11 @@ ps aux
 <br />
 
 
-Let's change directories into the proc directory for that pid. Remember, proc is a directory that does not exist on the drive. It allows us to see data associated with the various processes directly. This can be very useful as it allows us to dig into the memory of a process that is currently running on a suspect system.
+We had to change directories into the proc directory for that pid. Apparently, proc is a directory that does not exist on the drive. It allows us to see data associated with the various processes directly. This can be very useful as it allows us to dig into the memory of a process that is currently running on a suspect system.
 
 cd /proc/[pid]
 
-We can see a number of interesting directories here using the ls command:
+I was able to see a number of interesting directories here using the ls command:
 
 ls
 
@@ -107,7 +107,7 @@ ls
 <img src="https://github.com/mdnorris1/LinuxCLILab/blob/main/assets/ls.png" height="80%" width="80%" alt="ifconfig command"/>
 <br />
 
-We can run strings on the exe in this directory. This is very, very useful as when programs are created there may be usage information, mentions of system libraries and possible code comments. We use this all the time to attempt to identify what exactly a program is doing.
+I then ran strings on the exe in this directory. This is very, very useful according to John as when programs are created there may be usage information, mentions of system libraries and possible code comments. We use this all the time to attempt to identify what exactly a program is doing.
 
 strings ./exe
 
@@ -115,7 +115,7 @@ strings ./exe
 <img src="https://github.com/mdnorris1/LinuxCLILab/blob/main/assets/strings.png" height="80%" width="80%" alt="ifconfig command"/>
 <br />
 
-
+Hope you enjoyed the walkthrough!
 <!--
  ```diff
 - text in red
